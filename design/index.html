@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/design/main.css" />
+    <title>Cocktail bar</title>
+  </head>
+  <body>
+    <h1>Coctail Bar</h1>
+    <form action="/submit" id="myForm" method="post">
+      <div class="container">
+        <img src="/assets/images/cocktail.jpg" alt="cocktail" />
+        <div class="input-from">
+          <label for="cocktail-by-name">Find your cocktail by name:</label>
+          <input
+            type="text"
+            id="cocktail-by-name"
+            placeholder="cocktail-by-name"
+            name="strDrink"
+          />
+          <label for="cocktail-by-letter"
+            >Find your cocktail by first letter:</label
+          >
+          <input
+            type="text"
+            id="cocktail-by-letter"
+            placeholder="cocktail-by-letter"
+            name="strDrinkLetter"
+          />
+          <label for="cocktail-by-ingredient"
+            >Find your cocktail by ingredient:</label
+          >
+          <input
+            type="text"
+            id="cocktail-by-ingredient"
+            placeholder="cocktail-by-ingredient"
+            name="strIngredient"
+          />
+          <button type="submit">Get recepe</button>
+        </div>
+        <div class="component-container">
+          <ul id="ingredientsList">
+            <li>Component 1.</li>
+            <li>Component 2.</li>
+            <li>Component 3.</li>
+            <li>Component 4.</li>
+            <li>Component 5.</li>
+          </ul>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

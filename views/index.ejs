@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/styles.css" />
+    <title>Cocktail bar</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 20px;
+        /* justify-content: center; */
+        align-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 500px;
+        margin-left: 40%;
+        max-width: 600px;
+        /* margin: 50px auto; */
+        /* background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+      }
+
+      img {
+        width: auto;
+        height: 400px;
+      }
+
+      .input-from {
+        display: inline-flex;
+        flex-direction: column;
+        align-content: left;
+        align-items: left;
+        width: 500px;
+        max-width: 600px;
+      }
+
+      input {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+      .component-container {
+        text-align: left;
+      }
+      ul {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Coctail Bar</h1>
+    <form action="/submit" id="myForm" method="POST">
+      <div class="container">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/0/09/Klassiche_Margarita.jpg"
+          alt="cocktail"
+        />
+        <div class="input-from">
+          <label for="cocktail-by-name">Find your cocktail by name:</label>
+          <input
+            type="text"
+            id="cocktail-by-name"
+            placeholder="cocktail-by-name"
+            name="coctailName"
+          />
+          <label for="cocktail-by-letter"
+            >Find your cocktail by first letter:</label
+          >
+          <input
+            type="text"
+            id="cocktail-by-letter"
+            placeholder="cocktail-by-letter"
+            name="strDrinkLetter"
+          />
+          <label for="cocktail-by-ingredient"
+            >Find your cocktail by ingredient:</label
+          >
+          <input
+            type="text"
+            id="cocktail-by-ingredient"
+            placeholder="cocktail-by-ingredient"
+            name="strIngredient"
+          />
+          <button type="submit" method="POST">Get recepe</button>
+        </div>
+        <div class="component-container">
+          <% if (locals.name && locals.instructions && locals.ingredient) { %>
+          <h2><%= name %></h2>
+          <P><%= instructions %></P>
+          <ul id="ingredientsList">
+            <% ingredient.forEach((item)=> { %>
+            <li><%= item %></li>
+            <% }) %> <% } %>
+          </ul>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
